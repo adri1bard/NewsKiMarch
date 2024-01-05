@@ -5,14 +5,14 @@ package org.isen.News
 
 import com.github.kittinunf.fuel.httpGet
 import org.isen.News.controller.NewsController
-import org.isen.News.model.data.Articles
-import org.isen.News.model.impl.ArticleModel
-import org.isen.News.view.INewsView
+import org.isen.News.model.data.Article
+import org.isen.News.model.impl.NewsModel
+import org.isen.News.view.impl.NewsDetailsView
 import org.isen.News.view.impl.NewsView
 
 
 fun main() {
-//  var m:ArticleModel = ArticleModel()
+//  var m:NewsModel = NewsModel()
 //  var c:NewsController = NewsController(m)
 //  var v:INewsView = NewsView(c)
 //
@@ -31,4 +31,34 @@ fun main() {
 //        println("error because News list must not be null : $error")
 //    }
 
+//    val everythingURL:String = "https://newsapi.org/v2/everything"
+//    val search_topic:String= "q=tesla"
+//    val apiKey:String = "apiKey=d46c0fcca35843d481d37e7b3668f168"
+//
+//    var article:Article? = null
+//    var URL_topic = everythingURL + "?" + search_topic + "&" + apiKey
+//
+//    println("gfyughyuihgvhjuih")
+//    val (request, response, result) = URL_topic.httpGet().responseObject(
+//        Article.Deserializer())
+//    val (si, error) = result
+//    if (si != null) {
+//        article = si
+//        println("Author : ${si.articles[0]}")
+//    } else {
+//        println("error because News list must not be null : $error")
+//    }
+
+    var model:NewsModel = NewsModel()
+    var controller:NewsController = NewsController(model)
+    var vue1: NewsView = NewsView(controller)
+    var vue2: NewsDetailsView = NewsDetailsView(controller)
+
+    controller.displayViews()
+    controller.loadStationInformation()
+
+
+
 }
+
+

@@ -25,6 +25,11 @@ dependencies {  // Use the Kotlin JUnit 5 integration.
     // Use the JUnit 5 integration.
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
@@ -42,15 +47,15 @@ dependencies {  // Use the Kotlin JUnit 5 integration.
 
 }
 
-//testing {
-//    suites {
-//        // Configure the built-in test suite
-//        val test by getting(JvmTestSuite::class) {
-//            // Use Kotlin Test test framework
-//            useKotlinTest("1.9.0")
-//        }
-//    }
-//}
+testing {
+    suites {
+        // Configure the built-in test suite
+       val test by getting(JvmTestSuite::class) {
+            // Use Kotlin Test test framework
+            useKotlinTest("1.9.0")
+        }
+    }
+}
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
